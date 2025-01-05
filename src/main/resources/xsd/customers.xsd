@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:tns="http://www.example.com/demosoap/gen"
+           targetNamespace="http://www.example.com/demosoap/gen" 
+           elementFormDefault="qualified">
+
+    <!-- Import accounts.xsd -->
+    <xs:import namespace="http://www.example.com/demosoap/gen" 
+               schemaLocation="accounts.xsd"/>
+
+    <!-- Get All Customers -->
+    <xs:element name="getCustomersRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCustomersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customers" type="tns:customer" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Get Customer by Email -->
+    <xs:element name="getCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Get Customer by CIN -->
+    <xs:element name="getCustomerByCinRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cin" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCustomerByCinResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Create Customer -->
+    <xs:element name="createCustomerRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Customer Type -->
+    <xs:complexType name="customer">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="0"/>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
+            <xs:element name="phone" type="xs:string" minOccurs="0"/>
+            <xs:element name="address" type="xs:string" minOccurs="0"/>
+            <xs:element name="cin" type="xs:string"/>
+            <xs:element name="accounts" type="tns:account" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

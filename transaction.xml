@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://www.example.com/demosoap/gen"
+                  targetNamespace="http://www.example.com/demosoap/gen">
+
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   targetNamespace="http://www.example.com/demosoap/gen">
+            <xs:import namespace="http://www.example.com/demosoap/gen"
+                       schemaLocation="src/main/resources/xsd/transactions.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <!-- Messages -->
+    <wsdl:message name="createTransactionRequest">
+        <wsdl:part name="parameters" element="tns:createTransactionRequest"/>
+    </wsdl:message>
+    <wsdl:message name="createTransactionResponse">
+        <wsdl:part name="parameters" element="tns:createTransactionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getTransactionRequest">
+        <wsdl:part name="parameters" element="tns:getTransactionRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getTransactionResponse">
+        <wsdl:part name="parameters" element="tns:getTransactionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getTransactionsByAccountRequest">
+        <wsdl:part name="parameters" element="tns:getTransactionsByAccountRequest"/>
+    </wsdl:message>
+    <wsdl:message name="getTransactionsByAccountResponse">
+        <wsdl:part name="parameters" element="tns:getTransactionsByAccountResponse"/>
+    </wsdl:message>
+
+    <!-- Port Type -->
+    <wsdl:portType name="transactionPort">
+        <wsdl:operation name="createTransaction">
+            <wsdl:input message="tns:createTransactionRequest"/>
+            <wsdl:output message="tns:createTransactionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTransaction">
+            <wsdl:input message="tns:getTransactionRequest"/>
+            <wsdl:output message="tns:getTransactionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getTransactionsByAccount">
+            <wsdl:input message="tns:getTransactionsByAccountRequest"/>
+            <wsdl:output message="tns:getTransactionsByAccountResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <!-- Binding -->
+    <wsdl:binding name="transactionPortSoap11" type="tns:transactionPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+        <wsdl:operation name="createTransaction">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTransaction">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="getTransactionsByAccount">
+            <soap:operation soapAction=""/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <!-- Service -->
+    <wsdl:service name="transactionPortService">
+        <wsdl:port name="transactionPortSoap11" binding="tns:transactionPortSoap11">
+            <soap:address location="http://localhost:8888/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

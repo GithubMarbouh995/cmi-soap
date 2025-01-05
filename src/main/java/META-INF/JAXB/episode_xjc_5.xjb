@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Ce fichier a été généré par Eclipse Implementation of JAXB, v4.0.2 
+Voir https://eclipse-ee4j.github.io/jaxb-ri 
+Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
+Généré le : 2025.01.05 à 05:15:52 AM WEST
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://www.example.com/demosoap/gen">
+    <schemaBindings map="false">
+      <package name="com.example.demosoap.gen"/>
+    </schemaBindings>
+    <bindings scd="tns:getAccountsRequest">
+      <class ref="com.example.demosoap.gen.GetAccountsRequest"/>
+    </bindings>
+    <bindings scd="tns:getAccountsResponse">
+      <class ref="com.example.demosoap.gen.GetAccountsResponse"/>
+    </bindings>
+    <bindings scd="~tns:account">
+      <class ref="com.example.demosoap.gen.Account"/>
+    </bindings>
+    <bindings scd="tns:getAccountRequest">
+      <class ref="com.example.demosoap.gen.GetAccountRequest"/>
+    </bindings>
+    <bindings scd="tns:getAccountResponse">
+      <class ref="com.example.demosoap.gen.GetAccountResponse"/>
+    </bindings>
+    <bindings scd="tns:createAccountRequest">
+      <class ref="com.example.demosoap.gen.CreateAccountRequest"/>
+    </bindings>
+    <bindings scd="tns:createAccountResponse">
+      <class ref="com.example.demosoap.gen.CreateAccountResponse"/>
+    </bindings>
+    <bindings scd="tns:getCustomersRequest">
+      <class ref="com.example.demosoap.gen.GetCustomersRequest"/>
+    </bindings>
+    <bindings scd="tns:getCustomersResponse">
+      <class ref="com.example.demosoap.gen.GetCustomersResponse"/>
+    </bindings>
+    <bindings scd="~tns:customer">
+      <class ref="com.example.demosoap.gen.Customer"/>
+    </bindings>
+    <bindings scd="tns:getCustomerRequest">
+      <class ref="com.example.demosoap.gen.GetCustomerRequest"/>
+    </bindings>
+    <bindings scd="tns:getCustomerResponse">
+      <class ref="com.example.demosoap.gen.GetCustomerResponse"/>
+    </bindings>
+    <bindings scd="tns:getCustomerByCinRequest">
+      <class ref="com.example.demosoap.gen.GetCustomerByCinRequest"/>
+    </bindings>
+    <bindings scd="tns:getCustomerByCinResponse">
+      <class ref="com.example.demosoap.gen.GetCustomerByCinResponse"/>
+    </bindings>
+    <bindings scd="tns:createCustomerRequest">
+      <class ref="com.example.demosoap.gen.CreateCustomerRequest"/>
+    </bindings>
+    <bindings scd="tns:createCustomerResponse">
+      <class ref="com.example.demosoap.gen.CreateCustomerResponse"/>
+    </bindings>
+    <bindings scd="tns:getProductsRequest">
+      <class ref="com.example.demosoap.gen.GetProductsRequest"/>
+    </bindings>
+    <bindings scd="tns:getProductsResponse">
+      <class ref="com.example.demosoap.gen.GetProductsResponse"/>
+    </bindings>
+    <bindings scd="~tns:product">
+      <class ref="com.example.demosoap.gen.Product"/>
+    </bindings>
+    <bindings scd="tns:getProductRequest">
+      <class ref="com.example.demosoap.gen.GetProductRequest"/>
+    </bindings>
+    <bindings scd="tns:getProductResponse">
+      <class ref="com.example.demosoap.gen.GetProductResponse"/>
+    </bindings>
+    <bindings scd="tns:postProductRequest">
+      <class ref="com.example.demosoap.gen.PostProductRequest"/>
+    </bindings>
+    <bindings scd="tns:postProductResponse">
+      <class ref="com.example.demosoap.gen.PostProductResponse"/>
+    </bindings>
+    <bindings scd="tns:createTransactionRequest">
+      <class ref="com.example.demosoap.gen.CreateTransactionRequest"/>
+    </bindings>
+    <bindings scd="~tns:transaction">
+      <class ref="com.example.demosoap.gen.Transaction"/>
+    </bindings>
+    <bindings scd="tns:createTransactionResponse">
+      <class ref="com.example.demosoap.gen.CreateTransactionResponse"/>
+    </bindings>
+    <bindings scd="tns:getTransactionRequest">
+      <class ref="com.example.demosoap.gen.GetTransactionRequest"/>
+    </bindings>
+    <bindings scd="tns:getTransactionResponse">
+      <class ref="com.example.demosoap.gen.GetTransactionResponse"/>
+    </bindings>
+    <bindings scd="tns:getTransactionsByAccountRequest">
+      <class ref="com.example.demosoap.gen.GetTransactionsByAccountRequest"/>
+    </bindings>
+    <bindings scd="tns:getTransactionsByAccountResponse">
+      <class ref="com.example.demosoap.gen.GetTransactionsByAccountResponse"/>
+    </bindings>
+    <bindings scd="~tns:transactionStatus">
+      <typesafeEnumClass ref="com.example.demosoap.gen.TransactionStatus"/>
+    </bindings>
+    <bindings scd="~tns:transactionType">
+      <typesafeEnumClass ref="com.example.demosoap.gen.TransactionType"/>
+    </bindings>
+  </bindings>
+</bindings>
+

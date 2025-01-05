@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:tns="http://www.example.com/demosoap/gen"
+           targetNamespace="http://www.example.com/demosoap/gen" 
+           elementFormDefault="qualified">
+
+    <!-- Définition du type Account -->
+    <xs:complexType name="account">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="accountNumber" type="xs:string"/>
+            <xs:element name="accountHolder" type="xs:string"/>
+            <xs:element name="balance" type="xs:double"/>
+            <xs:element name="accountType" type="xs:string"/>
+            <xs:element name="currency" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Get All Accounts -->
+    <xs:element name="getAccountsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAccountsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accounts" type="tns:account" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Get Account by Number -->
+    <xs:element name="getAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountNumber" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="tns:account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Create Account -->
+    <xs:element name="createAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="tns:account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="createAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="account" type="tns:account"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

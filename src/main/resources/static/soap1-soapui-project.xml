@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5f03d099-e01a-4287-b47e-5c03f7c09455" activeEnvironment="Default" name="soap1" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="73e94273-adc5-45de-a0d5-012f8ee8e524" wsaVersion="NONE" name="productPortSoap11" type="wsdl" bindingName="{http://www.example.com/demosoap/gen}productPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/hp/IdeaProjects/demosoap/demosoap-soapui-project.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://localhost:8888/ws</con:endpoint></con:endpoints><con:operation id="20ad92ff-aed9-4d00-988c-cee57c2d6978" isOneWay="false" action="http://www.example.com/demosoap/gen/getProduct" name="getProduct" bindingOperationName="getProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ddc7d7d5-3570-4777-9959-9984b9ef8a80" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:getProductRequest>\r
+         <gen:name>?</gen:name>\r
+      </gen:getProductRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/getProduct"/></con:call></con:operation><con:operation id="0db16c88-ee8a-470f-bc7d-465e271b7f84" isOneWay="false" action="http://www.example.com/demosoap/gen/getProducts" name="getProducts" bindingOperationName="getProducts" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e39692f6-b76c-4989-865b-a5ed0a62997a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:getProductsRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/getProducts"/></con:call></con:operation><con:operation id="61422d39-5353-4316-95e0-bc55beff2d75" isOneWay="false" action="http://www.example.com/demosoap/gen/postProduct" name="postProduct" bindingOperationName="postProduct" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="32d50a96-76cf-46f7-bab5-9c3104417aa4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:postProductRequest>\r
+         <gen:product>\r
+            <gen:id>?</gen:id>\r
+            <gen:name>?</gen:name>\r
+            <gen:price>?</gen:price>\r
+         </gen:product>\r
+      </gen:postProductRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/postProduct"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="db77410a-8daa-418e-87bf-fe7e339de64e" wsaVersion="NONE" name="accountPortSoap11" type="wsdl" bindingName="{http://www.example.com/demosoap/gen}accountPortSoap11" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/hp/IdeaProjects/demosoap/demosoap-soapui-project.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/hp/IdeaProjects/demosoap/demosoap-soapui-project.xml"><con:part><con:url>file:/C:/Users/hp/IdeaProjects/demosoap/demosoap-soapui-project.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.example.com/demosoap/gen" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.example.com/demosoap/gen" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.com/demosoap/gen" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.example.com/demosoap/gen">
+      <!--Types de base-->
+      <xs:complexType name="product">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="price" type="xs:float"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="account">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int"/>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="balance" type="xs:float"/>
+        </xs:sequence>
+      </xs:complexType>
+      <!--Product Operations-->
+      <xs:element name="getProductsRequest">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getProductsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="products" type="tns:product"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getProductRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getProductResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="product" type="tns:product"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postProductRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="product" type="tns:product"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postProductResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="product" type="tns:product"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Account Operations-->
+      <xs:element name="getAccountRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="account" type="tns:account"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountsRequest">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAccountsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="accounts" type="tns:account"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createAccountRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="account" type="tns:account"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createAccountResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="account" type="tns:account"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateAccountRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="account" type="tns:account"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateAccountResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="account" type="tns:account"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteAccountRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="deleteAccountResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="success" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <!--Messages-->
+  <wsdl:message name="getAccountsRequest">
+    <wsdl:part element="tns:getAccountsRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountsResponse">
+    <wsdl:part element="tns:getAccountsResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountRequest">
+    <wsdl:part element="tns:getAccountRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAccountResponse">
+    <wsdl:part element="tns:getAccountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createAccountRequest">
+    <wsdl:part element="tns:createAccountRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createAccountResponse">
+    <wsdl:part element="tns:createAccountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountRequest">
+    <wsdl:part element="tns:updateAccountRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="updateAccountResponse">
+    <wsdl:part element="tns:updateAccountResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteAccountRequest">
+    <wsdl:part element="tns:deleteAccountRequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="deleteAccountResponse">
+    <wsdl:part element="tns:deleteAccountResponse" name="parameters"/>
+  </wsdl:message>
+  <!--Port Types-->
+  <wsdl:portType name="AccountPortType">
+    <wsdl:operation name="getAccounts">
+      <wsdl:input message="tns:getAccountsRequest"/>
+      <wsdl:output message="tns:getAccountsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAccount">
+      <wsdl:input message="tns:getAccountRequest"/>
+      <wsdl:output message="tns:getAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="createAccount">
+      <wsdl:input message="tns:createAccountRequest"/>
+      <wsdl:output message="tns:createAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccount">
+      <wsdl:input message="tns:updateAccountRequest"/>
+      <wsdl:output message="tns:updateAccountResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAccount">
+      <wsdl:input message="tns:deleteAccountRequest"/>
+      <wsdl:output message="tns:deleteAccountResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!--Bindings-->
+  <wsdl:binding name="accountPortSoap11" type="tns:AccountPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAccounts">
+      <soap:operation soapAction="http://www.example.com/demosoap/gen/getAccounts"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccount">
+      <soap:operation soapAction="http://www.example.com/demosoap/gen/getAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createAccount">
+      <soap:operation soapAction="http://www.example.com/demosoap/gen/createAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAccount">
+      <soap:operation soapAction="http://www.example.com/demosoap/gen/updateAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAccount">
+      <soap:operation soapAction="http://www.example.com/demosoap/gen/deleteAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!--Services-->
+  <wsdl:service name="AccountService">
+    <wsdl:port binding="tns:accountPortSoap11" name="accountPortSoap11">
+      <soap:address location="http://localhost:8888/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8888/ws</con:endpoint></con:endpoints><con:operation id="3020f4ef-b383-4685-990e-c1db5fccc067" isOneWay="false" action="http://www.example.com/demosoap/gen/getAccount" name="getAccount" bindingOperationName="getAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="478dd687-9b0a-4f91-85ac-dfc775988f4a" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:getAccountRequest>\r
+         <gen:accountId>2</gen:accountId>\r
+      </gen:getAccountRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/getAccount"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c510dcc5-76f3-48bc-892b-e15cd4b7abf5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:getAccountRequest>\r
+         <gen:id>?</gen:id>\r
+      </gen:getAccountRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/getAccount"/></con:call></con:operation><con:operation id="e5dd52cd-c3c8-4fea-bf0e-32d0a8182b1f" isOneWay="false" action="http://www.example.com/demosoap/gen/getAccounts" name="getAccounts" bindingOperationName="getAccounts" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="da01e2fb-ee1c-40e7-b5c3-c794d47d3b31" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:getAccountsRequest/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/getAccounts"/></con:call></con:operation><con:operation id="6d2d354a-1b84-436b-bdd4-a05d97ec39e5" isOneWay="false" action="http://www.example.com/demosoap/gen/createAccount" name="createAccount" bindingOperationName="createAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d29b38e6-1a6b-483e-aa7e-389dd35549c6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:createAccountRequest>\r
+         <gen:account>\r
+            <gen:id>?</gen:id>\r
+            <gen:name>?</gen:name>\r
+            <gen:balance>?</gen:balance>\r
+         </gen:account>\r
+      </gen:createAccountRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/createAccount"/></con:call></con:operation><con:operation id="cb3cb42c-d847-47f8-baa5-e0e254b27078" isOneWay="false" action="http://www.example.com/demosoap/gen/updateAccount" name="updateAccount" bindingOperationName="updateAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c320a975-4ee1-4ff9-8b14-a5ab36e4ce48" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:updateAccountRequest>\r
+         <gen:account>\r
+            <gen:id>?</gen:id>\r
+            <gen:name>?</gen:name>\r
+            <gen:balance>?</gen:balance>\r
+         </gen:account>\r
+      </gen:updateAccountRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/updateAccount"/></con:call></con:operation><con:operation id="e4499480-1a9c-45a0-9ce5-57b063083b27" isOneWay="false" action="http://www.example.com/demosoap/gen/deleteAccount" name="deleteAccount" bindingOperationName="deleteAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d5c818f4-cb72-4912-acb3-ca852c538392" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8888/ws</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.example.com/demosoap/gen">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <gen:deleteAccountRequest>\r
+         <gen:id>?</gen:id>\r
+      </gen:deleteAccountRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.com/demosoap/gen/deleteAccount"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

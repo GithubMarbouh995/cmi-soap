@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+           xmlns:tns="http://www.example.com/demosoap/gen"
+           targetNamespace="http://www.example.com/demosoap/gen" 
+           elementFormDefault="qualified">
+
+    <!-- Types de transactions -->
+    <xs:simpleType name="transactionType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DEPOSIT"/>
+            <xs:enumeration value="WITHDRAWAL"/>
+            <xs:enumeration value="TRANSFER"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="transactionStatus">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PENDING"/>
+            <xs:enumeration value="COMPLETED"/>
+            <xs:enumeration value="FAILED"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Create Transaction -->
+    <xs:element name="createTransactionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transaction" type="tns:transaction"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createTransactionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transaction" type="tns:transaction"/>
+                <xs:element name="status" type="tns:transactionStatus"/>
+                <xs:element name="message" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Get Transaction -->
+    <xs:element name="getTransactionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transactionId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTransactionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transaction" type="tns:transaction"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Get Transactions by Account -->
+    <xs:element name="getTransactionsByAccountRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="accountId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getTransactionsByAccountResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transactions" type="tns:transaction" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Transaction Type -->
+    <xs:complexType name="transaction">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="0"/>
+            <xs:element name="transactionNumber" type="xs:string" minOccurs="0"/>
+            <xs:element name="amount" type="xs:double"/>
+            <xs:element name="type" type="tns:transactionType"/>
+            <xs:element name="status" type="tns:transactionStatus"/>
+            <xs:element name="sourceAccountId" type="xs:long" minOccurs="0"/>
+            <xs:element name="destinationAccountId" type="xs:long" minOccurs="0"/>
+            <xs:element name="createdAt" type="xs:dateTime" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
